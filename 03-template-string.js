@@ -15,3 +15,4 @@ console.log(msg2);
 // Dentro de uma template string não estamos limitados a usar apeans variáveis
 // dentro do simbolo ${}. Qualquer código JavaScript válido pode ser empregado ali.
 console.log(`EM ${2025+7}, ${nome.toUpperCase()} TERÁ ${idade + 7} ANOS.`);
+
