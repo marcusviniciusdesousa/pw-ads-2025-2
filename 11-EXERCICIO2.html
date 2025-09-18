@@ -46,10 +46,10 @@
 
       function handleChange(event) {
 
-        real = realRef.current.value || 0
+        real =  realRef.current.value || 0
         cotacao = cotacaoRef.current.value || 0
         conversao = cotacao > 0 ? real / cotacao : 0;
-        conversaoRef.current.textContent = `Valor em dólar: $${conversao.toFixed(2)}`
+        conversaoRef.current.textContent = `Conversão de real em dólar: $${conversao.toFixed(2)}`
 
       }
         
@@ -69,7 +69,7 @@
           <div>
             <label>
 
-              <span>Valor em Dolar $</span>  
+              <span>Preço do Dolar $</span>  
 
               <input type="number" ref= {cotacaoRef} onChange={handleChange}/> 
 
