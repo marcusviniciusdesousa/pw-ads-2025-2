@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cálculo da área de uma elispe</title>
+</head>
+<body> <!-- Integrando React através de links-->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // Marcus Vinicius de Sousa Alves
+    function Form(){
+
+      let raioMaior, raioMenor, areaElipse;
+
+      // Utilzando hook UseRef
+      const raioMaiorRef = React.useRef();
+      const raioMenorRef = React.useRef();  
+      const areaElipseRef = React.useRef();
+
+      function handleChange(event) { 
+        // Sempre que houver qualquer alteração nos valores dos inputs do Raio Menor e Raio Maior
+        // Será chamada a função handleChange.
+        raioMaior =  raioMaiorRef.current.value || 0 //Caso não tenha nenhum valor ou 
+        raioMenor = raioMenorRef.current.value || 0 // não seja possível pegar o valor, vai receber 0
+        areaElipse = Number(raioMaior) * Number(raioMenor) * Math.PI // Fórmula para calcular elipse
+        areaElipseRef.current.textContent = `Área ${areaElipse.toLocaleString('pt-br', { 
+            minimumFractionDigits: 4, //Colocar o resultado gravado na variável areaElipse na div
+            maximumFractionDigits: 4 // E deixar sempre com 4 números após a vírgula.
+        })
+        }`
+      }
+        
+      return <>
+        <h1>Calculo da área de uma elipse</h1>
+        <form>
+          <div>
+            <label>
+              <span>Medida do raio maior:</span>  
+              <input type="number" ref= {raioMaiorRef} onChange={handleChange}/> 
+            </label>   
+          </div>
+          
+          <div>
+            <label>
+              <span>Medida do raio menor</span>  
+              <input type="number" ref= {raioMenorRef} onChange={handleChange}/> 
+            </label>   
+          </div>
+
+          <div ref={areaElipseRef}/>
+        </form>
+      </>
+
+    }
+
+    const root = ReactDOM.createRoot(document.querySelector('#root')) // Criando root
+    root.render(<Form />) // Renderizando o root
+  </script>
+  
+</body>
+</html>
