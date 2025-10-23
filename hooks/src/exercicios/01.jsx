@@ -31,7 +31,7 @@ function Greeting({initialName}) {
 }
 
 function Exercicio01() {
-  return Greeting({initialName: "Turíbio"})
+  return <Greeting initialName="Turíbio" />
 }
 
 export default Exercicio01
