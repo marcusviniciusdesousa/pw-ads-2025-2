@@ -24,7 +24,7 @@ export default function FooterBar() {
          }
        }}
      >
-       Desenvolvido e mantido com <CoffeeIcon fontSize="verysmall" /> por <a href="year_manufacture"> Marcus Vinicius de Sousa Alves</a>
+       Desenvolvido e mantido com <CoffeeIcon fontSize="verysmall" /> por <a href="marcus.alves6@fatec.sp.gov.br"> Marcus Vinicius de Sousa Alves</a>
      </Typography>
     </Box>
   </>
